@@ -1,0 +1,37 @@
+{% extends 'pollsapp/base.html' %}
+
+
+
+{% block title%}
+Poll Result
+{% endblock%}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-lg-8 col-lg-offset-2">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Poll Result</h3>
+            </div>
+
+            <div class="panel-body">
+                <h3>{{ poll.title }}</h3>
+            </div>
+
+            <ul>
+                <li class="list-group-item">{{ poll.option_1 }} &mdash; <strong>{{ poll.option_1_count }}</strong></li>
+                <li class="list-group-item">{{ poll.option_2 }} &mdash; <strong>{{ poll.option_2_count }}</strong></li>
+                <li class="list-group-item">{{ poll.option_3 }} &mdash; <strong>{{ poll.option_3_count }}</strong></li>
+                <li class="list-group-item">{{ poll.option_4 }} &mdash; <strong>{{ poll.option_4_count }}</strong></li>
+            </ul>
+
+            <div class="panel-footer">
+                Total &mdash; <strong>{{ poll.total }}</strong>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}

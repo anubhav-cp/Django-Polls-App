@@ -1,0 +1,58 @@
+{% extends 'pollsapp/base.html' %}
+
+{% block title%}
+Vote
+{% endblock%}
+
+{% block content%}
+
+<div class="container mt-5">
+    <div class="d-flex justify-content-center row">
+        <div class="col-md-10 col-lg-10">
+            <div class="border">
+                <div class="question bg-white p-3 border-bottom">
+                    <div class="d-flex flex-row justify-content-between align-items-center mcq">
+                        <h4>Answer Poll</h4>
+                    </div>
+                </div>
+                <div class="question bg-white p-3 border-bottom">
+                    <div class="d-flex flex-row align-items-center question-title">
+                        <h3 class="text-danger">Q.</h3>
+                        <h5 class="mt-1 ml-2">{{polls.title}}</h5>
+                    </div>
+
+                    <form method="POST">
+                        {% csrf_token %}
+                  
+                    <div class="ans ml-2">
+                        <label class="radio"> <input type="radio" name="poll" value="option_1"> <span>{{polls.option_1}}</span>
+                        </label>
+                    </div>
+                    <div class="ans ml-2">
+                        <label class="radio"> <input type="radio" name="poll" value="option_2"> <span>{{polls.option_2}}</span>
+                        </label>
+                    </div>
+                    <div class="ans ml-2">
+                        <label class="radio"> <input type="radio" name="poll" value="option_3"> <span>{{polls.option_3}}</span>
+                        </label>
+                    </div>
+                    <div class="ans ml-2">
+                        <label class="radio"> <input type="radio" name="poll" value="option_4"> <span>{{polls.option_4}}</span>
+                        </label>
+                    </div>
+
+                    <div class="d-flex flex-row justify-content-between align-items-center p-3 bg-white">
+                        <input class="btn btn-primary d-flex align-items-center btn-danger" type="submit" value="Vote">
+                        
+                        <a class="btn btn-primary border-success align-items-center btn-success" href="{% url 'home' %}">Home</a>
+
+                    </div>
+            </form>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

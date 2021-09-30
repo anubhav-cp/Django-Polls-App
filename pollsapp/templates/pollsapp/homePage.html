@@ -1,0 +1,36 @@
+{% extends 'pollsapp/base.html' %}
+
+
+{% block title%}
+Home
+{% endblock%}
+
+{% block content %}
+
+
+<div class="container">
+<div class="row">
+        <div class="block">
+            <div class="">
+                <h3 class="main-head">Available Polls</h3>
+            </div>
+                
+            <ul class="border">
+                {% for poll in polls %}
+                <li class="grouping">
+                    <strong>{{ poll.title }}</strong>
+                    <span class="buttons">
+                        <a href="{% url 'vote-poll' poll.id %}" class="btn btn-primary">Vote</a> &nbsp;
+                        <a href="{% url 'poll-result' poll.id %}" class="btn btn-success">View Results</a> &nbsp;
+                    </span>
+                </li>
+                {% endfor %}
+            </ul>
+
+        </div>
+</div>
+</div>
+
+
+{% endblock %}
+

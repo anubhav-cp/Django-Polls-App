@@ -1,0 +1,23 @@
+.container{
+    width: 80%;
+    margin: auto;
+}
+
+
+
+.main-head {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.grouping {
+    padding: 5px 10px;
+    background-color: #ffffff;
+    border: 1px solid #DDDDDD;
+  }
+
+.border{
+    list-style: none;
+    padding: 0;
+}
